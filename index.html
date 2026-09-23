@@ -1,0 +1,850 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#141B1F">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Болгария">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<title>Болгария · Готовимся к 6 октября</title>
+<style>
+@font-face {
+  font-family: 'PT Serif';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/pt-serif-700-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'PT Serif';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/pt-serif-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+:root{
+ --bg:#E6EAE5;--surface:#EFF2EC;--surface-2:#DCE2DA;--ink:#22302F;--muted:#566866;--line:#CBD4CB;--line-deep:#B6C2B9;
+ --primary:#3D6F8E;--primary-deep:#2E5770;--primary-soft:#D5E1E8;--on-primary:#EFF2EC;
+ --green:#3F7452;--green-soft:#D8E6DA;--green-ink:#2D573C;--on-green:#EFF2EC;
+ --red:#A6504F;--red-soft:#EFDCD8;--red-ink:#7E3A39;
+ --gold:#B8903A;--gold-soft:#EDE3C9;--gold-text:#7F6120;
+ --sel:#7F6120;--sel-soft:#EDE3C9;
+ --mark:#EADBA8;--mark-ink:#22302F;--cord-white:#EFF2EC;
+ --shadow:0 1px 2px rgba(34,48,47,.06),0 8px 24px -12px rgba(34,48,47,.16);
+ --display:"PT Serif",Georgia,"Times New Roman",serif;--body:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif;
+ color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+ --bg:#141B1F;--surface:#1B252A;--surface-2:#223038;--ink:#DDE6E3;--muted:#8FA3A3;--line:#29373E;--line-deep:#36484F;
+ --primary:#7AAFD4;--primary-deep:#5A8DB0;--primary-soft:#1E3240;--on-primary:#0F1A22;
+ --green:#8CC79A;--green-soft:#1C2E26;--green-ink:#B2DDBC;--on-green:#10201A;
+ --red:#E08C8C;--red-soft:#34242A;--red-ink:#F0B5B3;
+ --gold:#E3B96A;--gold-soft:#2E2A1F;--gold-text:#E3B96A;
+ --sel:#E3B96A;--sel-soft:#2E2A1F;
+ --mark:#3D3420;--mark-ink:#F2DDA8;--cord-white:#DDE6E3;
+ --shadow:0 1px 2px rgba(0,0,0,.35),0 8px 24px -12px rgba(0,0,0,.6);color-scheme:dark}}
+:root[data-theme="dark"]{
+ --bg:#141B1F;--surface:#1B252A;--surface-2:#223038;--ink:#DDE6E3;--muted:#8FA3A3;--line:#29373E;--line-deep:#36484F;
+ --primary:#7AAFD4;--primary-deep:#5A8DB0;--primary-soft:#1E3240;--on-primary:#0F1A22;
+ --green:#8CC79A;--green-soft:#1C2E26;--green-ink:#B2DDBC;--on-green:#10201A;
+ --red:#E08C8C;--red-soft:#34242A;--red-ink:#F0B5B3;
+ --gold:#E3B96A;--gold-soft:#2E2A1F;--gold-text:#E3B96A;
+ --sel:#E3B96A;--sel-soft:#2E2A1F;
+ --mark:#3D3420;--mark-ink:#F2DDA8;--cord-white:#DDE6E3;
+ --shadow:0 1px 2px rgba(0,0,0,.35),0 8px 24px -12px rgba(0,0,0,.6);color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 var(--body);-webkit-font-smoothing:antialiased}
+button,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer;touch-action:manipulation}
+:focus-visible{outline:2px solid var(--primary);outline-offset:2px;border-radius:6px}
+.app{max-width:640px;margin:0 auto;padding-inline:16px;padding-block:0 120px}
+body.in-lesson .app{padding-block-end:230px}
+body.in-lesson .tabs{display:none}
+
+.top{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-block:12px 10px;margin-inline:-16px;padding-inline:16px;position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-size:19px;font-weight:700}
+.brand small{font-family:var(--body);font-weight:400;font-size:13px;color:var(--muted)}
+.cord{display:inline-block;width:26px;height:6px;border-radius:3px;background:repeating-linear-gradient(115deg,var(--red) 0 5px,var(--cord-white) 5px 10px);border:1px solid var(--line-deep)}
+.stats{display:flex;gap:2px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.chip{display:inline-flex;align-items:center;gap:4px;font-weight:700;font-size:14px;padding:4px 7px;border-radius:10px;font-variant-numeric:tabular-nums;color:var(--muted)}
+.chip svg{width:18px;height:18px}
+.chip.days{color:var(--primary)}.chip.fire{color:var(--gold-text)}.chip.known{color:var(--green)}
+.chip.off{opacity:.6}
+.icon-btn{width:40px;height:40px;margin-left:4px;border:1px solid var(--line-deep);background:var(--surface);color:var(--ink);border-radius:12px;font-size:19px;line-height:1}
+
+h1{font-family:var(--display);font-weight:700;font-size:clamp(28px,6.5vw,36px);line-height:1.2;margin:22px 0 8px;text-wrap:balance}
+h2.h2{font-family:var(--display);font-weight:700;font-size:22px;margin:30px 0 12px;text-wrap:balance}
+.lead{color:var(--muted);margin:0 0 20px;max-width:60ch}
+.stack{display:grid;gap:12px}
+
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:52px;padding:12px 18px;border-radius:12px;border:1px solid var(--line-deep);background:var(--surface);font-weight:700;font-size:16px;text-align:center;transition:transform .1s ease,background .15s}
+.btn:active:not(:disabled){transform:scale(.98)}
+.btn.primary{background:var(--primary);border-color:var(--primary);color:var(--on-primary)}
+.btn.good{background:var(--green);border-color:var(--green);color:var(--on-green)}
+.btn.danger{background:var(--red);border-color:var(--red);color:var(--on-primary)}
+.btn.blue{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.btn.outline-red{color:var(--red-ink);border-color:transparent;background:var(--red-soft)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.ghost{background:transparent;border-color:transparent;color:var(--muted);text-decoration:underline;min-height:44px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:0 0 20px;padding:0;list-style:none}
+.how li{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px;font-size:14px;line-height:1.35;color:var(--muted);box-shadow:var(--shadow)}
+.how b{display:block;font-family:var(--display);font-size:16px;color:var(--ink);margin-bottom:4px}
+.path{position:relative;display:grid;gap:22px;padding-block:30px 12px}
+.path::before{content:"";position:absolute;top:50px;bottom:44px;left:50%;width:6px;transform:translateX(-50%);border-radius:3px;background:repeating-linear-gradient(115deg,var(--red) 0 6px,var(--cord-white) 6px 12px);opacity:.55}
+.node{display:grid;grid-template-columns:1fr 80px 1fr;align-items:center;gap:14px;width:100%;background:none;border:0;padding:0;text-align:left}
+.node .disc{grid-column:2;width:74px;height:74px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-size:26px;font-weight:700;background:var(--surface);color:var(--muted);border:1px solid var(--line-deep);box-shadow:0 0 0 5px var(--bg),var(--shadow);position:relative;transition:transform .1s}
+.node:active .disc{transform:scale(.95)}
+.node .disc svg{width:32px;height:32px}
+.node.done .disc{background:var(--green);border-color:var(--green);color:var(--on-green)}
+.node.next .disc{background:var(--primary);border-color:var(--primary);color:var(--on-primary)}
+.node.exam .disc{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.node .txt{grid-column:3;grid-row:1}
+.node:nth-child(even) .txt{grid-column:1;text-align:right}
+.node .t{display:block;font-family:var(--display);font-weight:700;font-size:18px;line-height:1.2}
+.node .s{display:block;font-size:13px;color:var(--muted);margin-top:3px}
+.node.next .t{color:var(--primary)}
+.bubble{position:absolute;top:-30px;left:50%;transform:translateX(-50%);background:var(--primary);color:var(--on-primary);border-radius:8px;padding:1px 9px;font:700 12px/1.6 var(--body);letter-spacing:.04em;white-space:nowrap;animation:bob 1.8s ease-in-out infinite}
+@keyframes bob{50%{transform:translate(-50%,-3px)}}
+
+.lesson-top{display:flex;align-items:center;gap:12px;padding-block:14px 10px;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5}
+.x{flex:none;width:40px;height:40px;border:0;background:none;color:var(--muted);font-size:28px;line-height:1;border-radius:10px}
+.bar{flex:1;height:8px;background:var(--surface-2);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;min-width:8px;background:var(--primary);border-radius:99px;transition:width .4s ease}
+.combo{flex:none;font-weight:700;font-size:13px;color:var(--gold-text);background:var(--gold-soft);border-radius:10px;padding:3px 8px}
+.stack>.kind{margin-bottom:-6px}
+.kind{font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.kind.new{color:var(--green)}.kind.recall{color:var(--gold-text)}.kind.exam{color:var(--primary)}
+.prompt{font-family:var(--display);font-weight:700;font-size:clamp(23px,5.6vw,29px);line-height:1.3;margin:4px 0 8px;text-wrap:balance}
+.ctx{color:var(--muted);font-size:15px;margin:0 0 6px}
+.given{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;font-size:18px;font-weight:600;box-shadow:var(--shadow)}
+.answer{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--green);border-radius:14px;padding:16px 16px 18px;box-shadow:var(--shadow)}
+.answer .lab,.mine .lab{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green)}
+.answer p{margin:8px 0 0;font-size:18px;line-height:1.65;color:var(--ink)}
+.answer b,.qa .a b{font-weight:700;background:var(--mark);color:var(--mark-ink);border-radius:4px;padding:0 3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.note{background:var(--gold-soft);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:10px 12px;font-size:15px}
+.mine{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:14px;padding:16px;box-shadow:var(--shadow)}
+.mine .lab{color:var(--gold-text)}
+.mine p{margin:6px 0 0;font-size:18px;white-space:pre-wrap}
+textarea{width:100%;min-height:90px;margin-top:8px;padding:11px 13px;border-radius:11px;border:1px solid var(--line-deep);background:var(--surface);font-size:16px;line-height:1.45;resize:vertical}
+textarea:focus{outline:none;border-color:var(--primary)}
+.say{display:flex;gap:12px;align-items:center;background:var(--surface-2);border:1px dashed var(--line-deep);border-radius:14px;padding:18px;color:var(--muted)}
+.say svg{flex:none;width:30px;height:30px;color:var(--gold)}
+
+.opts{display:grid;gap:10px}
+.opt{display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:14px;border:1px solid var(--line);border-radius:12px;background:var(--surface);box-shadow:var(--shadow);font-size:16px;line-height:1.4;transition:border-color .15s,background .15s}
+.opt .num{flex:none;width:26px;height:26px;border:1px solid var(--line-deep);border-radius:7px;display:grid;place-items:center;font-size:13px;color:var(--muted)}
+.opt[aria-pressed="true"]{border-color:var(--sel);background:var(--sel-soft);box-shadow:0 0 0 1px var(--sel)}
+.opt[aria-pressed="true"] .num{border-color:var(--sel);color:var(--sel)}
+.opt.ok{border-color:var(--green);background:var(--green-soft);color:var(--green-ink);box-shadow:0 0 0 1px var(--green)}
+.opt.bad{border-color:var(--red);background:var(--red-soft);color:var(--red-ink);box-shadow:0 0 0 1px var(--red)}
+.opt:disabled{cursor:default}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.tok{padding:9px 13px;border-radius:11px;border:1px solid var(--line-deep);background:var(--surface);box-shadow:var(--shadow);font-size:15px;line-height:1.35;text-align:left}
+.tok.ghost{background:var(--surface-2);border-color:var(--surface-2);box-shadow:none;color:transparent}
+.tok[aria-pressed="true"]{border-color:var(--sel);background:var(--sel-soft);box-shadow:0 0 0 1px var(--sel)}
+.tok:disabled{cursor:default}
+.buildline{min-height:110px;display:flex;flex-wrap:wrap;align-content:flex-start;gap:8px;padding:10px;margin-bottom:12px;border:1px dashed var(--line-deep);border-radius:14px;background:var(--surface-2)}
+.buildline.ok{border-color:var(--green);background:var(--green-soft)}
+.buildline.bad{border-color:var(--red);background:var(--red-soft)}
+.sent{font-size:19px;line-height:1.9;margin:4px 0 14px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px;box-shadow:var(--shadow)}
+.slot{display:inline-block;min-width:110px;padding:0 8px;border-bottom:2px solid var(--ink);text-align:center;color:var(--sel);font-weight:700}
+.slot.ok{color:var(--green);border-color:var(--green)}.slot.bad{color:var(--red);border-color:var(--red)}
+.match{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.match .col{display:grid;gap:10px;align-content:start}
+.m{min-height:58px;padding:10px;border-radius:12px;border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow);font-size:15px;line-height:1.3}
+.m[aria-pressed="true"]{border-color:var(--sel);background:var(--sel-soft);box-shadow:0 0 0 1px var(--sel)}
+.m.done{border-color:transparent;background:var(--green-soft);color:var(--green-ink);box-shadow:none;opacity:.6;cursor:default}
+.m.err{border-color:var(--red);background:var(--red-soft);color:var(--red-ink);animation:shake .35s}
+@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+
+.foot{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:14px 16px calc(14px + env(safe-area-inset-bottom,0px));background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+.foot-in{max-width:640px;margin:0 auto;display:grid;gap:12px}
+.foot.good{background:var(--green-soft);border-top-color:var(--green)}
+.foot.bad{background:var(--red-soft);border-top-color:var(--red)}
+.fb{display:flex;gap:12px;align-items:flex-start}
+.fb .ic{flex:none;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--surface)}
+.fb .ic svg{width:22px;height:22px}
+.foot.good .ic{color:var(--green)}.foot.bad .ic{color:var(--red)}
+.fb-title{font-family:var(--display);font-weight:700;font-size:21px;line-height:1.25}
+.foot.good .fb-title{color:var(--green-ink)}.foot.bad .fb-title{color:var(--red-ink)}
+.fb-body{margin-top:2px;max-height:30vh;overflow:auto}
+.fb-body small{display:block;color:var(--muted);margin-top:4px}
+.sheet-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:30;display:grid;align-items:end}
+.sheet{background:var(--surface);border-radius:20px 20px 0 0;padding:22px 16px calc(20px + env(safe-area-inset-bottom,0px))}
+.sheet-in{max-width:640px;margin:0 auto;display:grid;gap:12px}
+.sheet h2{font-family:var(--display);font-size:22px;margin:0}
+.sheet p{margin:0 0 6px;color:var(--muted)}
+
+.done-hero{text-align:center;padding-top:28px}
+.medal{width:88px;height:88px;margin:0 auto;border-radius:50%;background:var(--green);color:var(--on-green);display:grid;place-items:center;box-shadow:0 0 0 8px var(--green-soft);animation:pop .5s cubic-bezier(.2,1.6,.4,1)}
+.medal svg{width:44px;height:44px}
+@keyframes pop{from{transform:scale(.4)}}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:22px 0}
+.tile{border:1px solid var(--line);border-radius:12px;padding:13px 10px;background:var(--surface);text-align:left}
+.tile span{display:block;font-size:12px;color:var(--muted)}
+.tile strong{display:block;font-family:var(--display);font-size:25px;font-variant-numeric:tabular-nums}
+.tile.gold strong{color:var(--gold-text)}.tile.green strong{color:var(--green)}
+.learned{list-style:none;padding:0;margin:0 0 22px;display:grid;gap:8px}
+.learned li{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-weight:600}
+.learned li em{display:block;font-style:normal;font-weight:400;color:var(--muted);margin-top:4px}
+.learned li.miss{border-left:4px solid var(--red)}
+
+.search{width:100%;padding:11px 14px;border-radius:11px;border:1px solid var(--line-deep);background:var(--surface);font-size:16px}
+.search:focus{outline:none;border-color:var(--primary)}
+.qa{padding-block:16px;border-bottom:1px solid var(--line)}
+.qa .head{display:flex;gap:10px;align-items:flex-start}
+.n{flex:none;display:inline-grid;place-items:center;min-width:28px;height:28px;padding:0 7px;border-radius:100px;background:var(--ink);font:700 13px/1 var(--display);color:var(--bg)}
+.qa .q{font-family:var(--display);font-weight:700;font-size:18px;line-height:1.35}
+.qa .a{margin:10px 0 0 38px;font-size:17px;line-height:1.6}
+.qa .a.hidden{color:transparent;background:var(--surface-2);border-radius:10px;user-select:none;cursor:pointer;position:relative;min-height:44px}
+.qa .a.hidden::after{content:"Нажми, чтобы открыть";position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-size:14px}
+.qa .a.hidden b{background:none;color:transparent}
+.tag{display:inline-block;font-family:var(--body);font-size:12px;font-weight:700;border-radius:100px;padding:1px 8px;margin-left:6px;vertical-align:3px;background:var(--surface-2);color:var(--muted)}
+.tag.red{background:var(--gold-soft);color:var(--gold-text)}
+.strength{display:inline-flex;gap:3px;margin-left:8px;vertical-align:2px}
+.strength i{width:7px;height:7px;border-radius:50%;background:var(--line-deep)}
+.strength i.on{background:var(--green)}
+
+.field{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--shadow)}
+.field label{font-family:var(--display);font-weight:700;font-size:17px;display:block;line-height:1.35}
+.field .b{display:block;color:var(--muted);font-size:14px;margin-top:3px}
+.saved{font-size:12px;font-weight:700;color:var(--green);min-height:16px;margin-top:4px}
+.switch{display:flex;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer}
+.switch input{width:20px;height:20px;accent-color:var(--primary)}
+.hist{list-style:none;padding:0;margin:0}
+.hist li{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+.hist li span:first-child{font-weight:600}
+.hist li span:last-child{color:var(--muted)}
+
+.tabs{position:fixed;left:0;right:0;bottom:0;z-index:10;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:6px 8px calc(6px + env(safe-area-inset-bottom,0px))}
+.tabs-in{max-width:640px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
+.tab{display:flex;flex-direction:column;align-items:center;gap:3px;min-height:56px;padding:6px 2px;border-radius:10px;border:0;background:none;font-weight:600;font-size:12px;color:var(--muted)}
+.tab svg{width:22px;height:22px}
+.tab[aria-current="page"]{background:var(--primary-soft);color:var(--primary)}
+#toast{position:fixed;top:calc(70px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);z-index:40;max-width:min(92vw,480px);background:var(--surface);color:var(--ink);border:1px solid var(--line-deep);padding:11px 16px;border-radius:12px;font-size:15px;box-shadow:var(--shadow)}
+@media (max-width:420px){.how{grid-template-columns:1fr}.node{grid-template-columns:1fr 70px 1fr}.node .disc{width:66px;height:66px;font-size:22px}.brand small{display:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.tools{display:flex;gap:8px;flex-wrap:wrap}
+.tool{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:8px 14px;border-radius:12px;border:1px solid var(--line-deep);background:var(--surface);font-weight:600;font-size:15px;color:var(--ink)}
+.tool svg{width:20px;height:20px;flex:none}
+.tool.on{border-color:var(--red);color:var(--red-ink);background:var(--red-soft)}
+.tool.on svg{animation:pulse 1s infinite}
+@keyframes pulse{50%{opacity:.3}}
+.heard{background:var(--surface);border:1px dashed var(--line-deep);border-radius:14px;padding:14px 16px}
+.heard .lab{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.heard p{margin:6px 0 0;font-size:17px;min-height:1.5em}
+.kchk{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.kc{font-size:14px;padding:3px 10px;border-radius:100px;background:var(--red-soft);color:var(--red-ink)}
+.kc.ok{background:var(--green-soft);color:var(--green-ink)}
+.kcsum{font-size:14px;color:var(--muted);margin-top:8px}
+.pcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px;box-shadow:var(--shadow);margin-bottom:16px}
+.pcard .pt{display:flex;justify-content:space-between;gap:10px;font-weight:600}
+.pcard .pt span:last-child{color:var(--muted);font-weight:400;font-size:14px}
+.pbar{display:flex;height:8px;border-radius:99px;overflow:hidden;background:var(--surface-2);margin:10px 0 10px}
+.pbar i{display:block;height:100%}
+.pbar .g{background:var(--green)}.pbar .y{background:var(--gold)}
+.plegend{display:flex;gap:14px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
+.plegend b{color:var(--ink)}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px}
+.dot.g{background:var(--green)}.dot.y{background:var(--gold)}.dot.n{background:var(--line-deep)}
+.st{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:100px;margin-top:8px}
+.st.ok{background:var(--green-soft);color:var(--green-ink)}.st.bad{background:var(--red-soft);color:var(--red-ink)}.st.n{background:var(--surface-2);color:var(--muted)}
+.info{background:var(--surface-2);border-radius:12px;padding:12px 14px;font-size:15px;color:var(--muted)}
+.info b{color:var(--ink)}
+.info ol{margin:6px 0 0;padding-left:20px}
+.lvl{display:inline-flex;gap:3px;margin-left:8px;vertical-align:2px}
+.lvl i{width:7px;height:7px;border-radius:50%;background:var(--line-deep)}
+.lvl i.y{background:var(--gold)}.lvl i.g{background:var(--green)}
+.offline{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--muted)}
+.offline i{width:8px;height:8px;border-radius:50%;background:var(--green)}
+.offline.no i{background:var(--gold)}
+</style>
+
+<div class="app" id="app"></div>
+<div id="toast" role="status" aria-live="polite" hidden></div>
+<nav class="tabs" aria-label="Разделы"><div class="tabs-in">
+ <button class="tab" data-tab="path" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="3" fill="currentColor"/><circle cx="12" cy="19" r="3" fill="currentColor"/><path d="M12 8v8" stroke="currentColor" stroke-width="2.4" stroke-dasharray="2 2.4"/></svg>Учить</button>
+ <button class="tab" data-tab="exam"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4.5 4v-4A2.5 2.5 0 0 1 4 13.5z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M8.5 9.5h7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>Экзамен</button>
+ <button class="tab" data-tab="list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h10.5L19 7.5V20H5z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M8.5 11h7M8.5 15h7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>Все ответы</button>
+ <button class="tab" data-tab="me"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.5" r="4" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M4.5 20.5c1-4 4-6 7.5-6s6.5 2 7.5 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>О себе</button>
+</div></nav>
+
+<script>
+(()=>{'use strict';
+/* ===== 22 вопроса — текст из файла «въпроси BG_4», по-русски.
+   **…** — ключевые слова (из ответа в файле). Все задания собираются только из этого текста.
+   lvl: easy — только прочитать и вспомнить; mid — плюс «выбери ответ»; без lvl — сложный, все задания. ===== */
+const Q=[
+{id:'1',personal:true,q:'Как вас зовут?',a:'Меня зовут … — полное имя, как в документах.',s:'Полное имя'},
+{id:'2',g:'me',lvl:'easy',noRev:true,avoid:['4'],q:'Кто вы по национальности / народности?',a:'Болгарин / болгарка.',s:'Болгарин / болгарка',keys:['болгарин']},
+{id:'3',g:'me',lvl:'easy',noRev:true,avoid:['22'],q:'Имеете ли вы судимости?',a:'Нет.',s:'Нет',keys:['нет']},
+{id:'4',g:'me',avoid:['2'],q:'Почему вы хотите получить болгарское гражданство?',
+ a:'Я **болгарин по национальности** и хочу жить в своей **прародине**, в государстве с **европейскими законами** и ценностями.',
+ s:'Я болгарин по национальности и хочу жить в своей прародине, в государстве с европейскими законами и ценностями',
+ keys:['болгарин по национальности','прародине','европейскими законами','ценностями'],
+ chunks:['Я болгарин по национальности','и хочу жить в своей прародине,','в государстве с европейскими законами','и ценностями.']},
+{id:'5',personal:true,q:'Впервые ли вы подаёте на болгарское гражданство?',a:'Отвечаю так, как есть.',s:'Как есть'},
+{id:'6',g:'state',lvl:'mid',q:'Как называется основной закон, который определяет способ управления, права и обязанности граждан в болгарском государстве?',a:'Конституция.',s:'Конституция',keys:['конституция']},
+{id:'7',personal:true,q:'Есть ли у вас родственники, которые имеют болгарское гражданство или находятся в процедуре его получения?',a:'Отвечаю так, как есть. Если да — ФИО, дата и место рождения.',s:'Как есть; если да — ФИО, дата и место рождения'},
+{id:'8',g:'hist',q:'Какой национальный праздник Республики Болгария и с каким историческим событием он связан?',
+ a:'**3 марта** — день освобождения Болгарии от **османского ига**. Этот праздник связан с тем, что в результате **Русско-турецкой войны** **1877–1878 гг.** между Российской и Османской империями был подписан предварительный мирный договор в местности **Сан-Стефано** (ныне это квартал Стамбула). В результате было урегулировано, хотя и неокончательно, установление **Третьего Болгарского государства** после почти **пятивекового** османского владычества.',
+ s:'3 марта — день освобождения от османского ига (война 1877–1878, договор в Сан-Стефано)',
+ keys:['3 марта','освобождения','османского','Русско-турецкой войны','1877','1878','Сан-Стефано','Третьего Болгарского государства'],
+ chunks:['3 марта — день освобождения от османского ига.','Русско-турецкая война 1877–1878 гг.','Мирный договор в Сан-Стефано.','Установление Третьего Болгарского государства','после почти пятивекового османского владычества.'],
+ pairs:[['3 марта','день освобождения'],['1877–1878 гг.','Русско-турецкая война'],['Сан-Стефано','мирный договор'],['почти пять веков','османское владычество']]},
+{id:'9',g:'geo',q:'С какими государствами граничит Болгария?',a:'Румыния, Сербия, Северная Македония, Греция, Турция.',s:'Румыния, Сербия, Северная Македония, Греция, Турция',
+ list:['Румыния','Сербия','Северная Македония','Греция','Турция']},
+{id:'10',g:'hist',lvl:'mid',q:'Когда празднуется День болгарской культуры, образования и славянской письменности?',a:'24 мая.',s:'24 мая',keys:['24 мая']},
+{id:'11',personal:true,q:'Где вы работаете и чем в данный момент занимаетесь?',a:'Отвечаю так, как есть.',s:'Как есть'},
+{id:'12',g:'geo',q:'Как называется столица Болгарии и у подножия какой горы она расположена?',
+ a:'**София**. Она находится у подножия горы **Витоша** на юге и **Стара-Планина** на севере.',s:'София — у подножия Витоши и Стара-Планины',
+ pairs:[['Столица','София'],['Гора на юге','Витоша'],['Гора на севере','Стара-Планина']]},
+{id:'13',g:'state',q:'Стихи какой песни являются гимном Болгарии?',
+ a:'**«Мила Родино»** — национальный гимн Болгарии с **1964 г.** Основой музыки и текста является песня **«Горда Стара планина»**, написанная **Цветаном Радославовым** в **1885 г.**',
+ s:'«Мила Родино» — гимн с 1964 г.',
+ keys:['Мила Родино','1964','Горда Стара планина','Радославов','1885'],
+ chunks:['«Мила Родино» —','национальный гимн Болгарии с 1964 г.','Основа — песня «Горда Стара планина»,','написанная Цветаном Радославовым','в 1885 г.'],
+ pairs:[['«Мила Родино»','гимн с 1964 г.'],['«Горда Стара планина»','песня 1885 г.'],['Цветан Радославов','автор песни']]},
+{id:'14',g:'hist',q:'С каким обычаем связана дата 1 марта?',
+ a:'**«Баба Марта»** — очень почитаемый болгарский праздник. **1 марта** все болгары крепят на воротнике или завязывают на кисти руки **мартеницу**. Она является символом **здоровья**, **долголетия**, плодовитости и **изобилия**. Делается она из **белых и красных** хлопковых или шерстяных витых нитей.',
+ s:'«Баба Марта» — мартеница из белых и красных нитей',
+ keys:['Баба Марта','мартеницу','здоровья','долголетия','изобилия','белых','красных'],
+ chunks:['«Баба Марта» — почитаемый болгарский праздник.','1 марта болгары носят мартеницу','на воротнике или на руке.','Она — символ здоровья, долголетия, плодовитости и изобилия.','Делается из белых и красных нитей.'],
+ pairs:[['1 марта','«Баба Марта»'],['Что носят','мартеницу'],['Из каких нитей','белых и красных'],['Символ','здоровья и долголетия']]},
+{id:'15',g:'state',lvl:'mid',q:'Как называется болгарская денежная единица?',a:'**Евро** — с 1 января 2026 года. Раньше был лев.',s:'Евро (раньше был лев)',keys:['евро'],
+ note:'В файле написано «лев», но файл составлен до 2026 года. С 1 января 2026 в Болгарии евро. Отвечай: «Сейчас евро, раньше был лев».'},
+{id:'16',g:'state',q:'Как называется танец, характерный для болгарского фольклора?',a:'Есть два характерных танца — **хоро** и **ръченица**.',s:'Хоро и ръченица',list:['хоро','ръченица']},
+{id:'17',g:'state',q:'Какие традиционные блюда вы знаете?',a:'Баница, тиквеник, мусака, пълнени чушки, шкембе чорба.',s:'Баница, тиквеник, мусака, пълнени чушки, шкембе чорба',
+ list:['баница','тиквеник','мусака','пълнени чушки','шкембе чорба']},
+{id:'18',g:'state',lvl:'easy',q:'Как называется болгарская азбука?',a:'Кириллица.',s:'Кириллица',keys:['кириллица']},
+{id:'19',g:'geo',q:'Можете ли назвать большую реку в Болгарии?',a:'Дунай, Марица, Струма, Искыр.',s:'Дунай, Марица, Струма, Искыр',list:['Дунай','Марица','Струма','Искыр']},
+{id:'20',g:'hist',q:'Кто такой Васил Левски?',
+ a:'Болгарский **революционер-будитель** и **национальный герой**. Он является организатором болгарской **национальной революции**. Ещё его называют **Апостолом свободы**, потому что он организовал и разработал **революционную сеть** для освобождения Болгарии от османского владычества.',
+ s:'Революционер и национальный герой, Апостол свободы',
+ keys:['революционер','национальный герой','национальной революции','Апостолом свободы','революционную сеть','освобождения'],
+ chunks:['Болгарский революционер-будитель','и национальный герой.','Организатор национальной революции.','Его называют Апостолом свободы —','он организовал революционную сеть','для освобождения Болгарии.']},
+{id:'21',g:'hist',q:'Какие другие национальные праздники вы знаете?',
+ a:'**6 мая** — день храбрости и болгарских войск. **6 сентября** — день соединения Болгарии с Восточной Румелией. **22 сентября** — день независимости. **1 ноября** — день народных будителей.',
+ s:'6 мая, 6 сентября, 22 сентября, 1 ноября',
+ keys:['6 мая','храбрости','6 сентября','соединения','22 сентября','независимости','1 ноября','будителей'],
+ pairs:[['6 мая','день храбрости и болгарских войск'],['6 сентября','день соединения с Восточной Румелией'],['22 сентября','день независимости'],['1 ноября','день народных будителей']]},
+{id:'22',g:'me',noRev:true,avoid:['3'],q:'Есть ли данные или факты, которые вы скрыли или не указали в документах и которые могут стать причиной отказа в гражданстве?',
+ a:'Нет, всё сказанное мною и написанное есть **полная правда**, и нет ничего **укрытого**.',s:'Нет, всё правда, ничего не скрыто',
+ keys:['нет','полная правда','нет ничего укрытого'],
+ chunks:['Нет,','всё сказанное мною и написанное','есть полная правда,','и нет ничего укрытого.']}
+];
+Q.forEach((q,i)=>q.n=i+1);
+const QM=Object.fromEntries(Q.map(q=>[q.id,q]));
+const NP=Q.filter(q=>!q.personal);
+const isHard=q=>!q.personal&&!q.lvl;
+const HARD=Q.filter(isHard).map(q=>q.id);
+const LESSONS=[
+ {id:'L1',title:'О себе',ids:['1','2','3','5']},
+ {id:'L2',title:'Главный ответ',ids:['4','22','7','11']},
+ {id:'L3',title:'Государство',ids:['6','15','18']},
+ {id:'L4',title:'География',ids:['12','9','19']},
+ {id:'L5',title:'Гимн и традиции',ids:['13','16','17']},
+ {id:'L6',title:'Праздники',ids:['8','10','14']},
+ {id:'L7',title:'Левски и даты',ids:['20','21']}
+];
+const EXAM_DAY=new Date(2026,9,6);
+const KEY='bg-duo.v1';
+const DAY=864e5;
+const app=document.getElementById('app');
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const md=s=>esc(s).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>');
+const plain=s=>String(s).replace(/\*\*/g,'');
+const shuffle=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const dkey=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+const today0=()=>{const d=new Date();d.setHours(0,0,0,0);return d.getTime()};
+const plural=(n,one,few,many)=>{const a=Math.abs(n)%100,b=a%10;return a>10&&a<20?many:b>1&&b<5?few:b===1?one:many};
+const low=s=>String(s).toLowerCase().replace(/ё/g,'е');
+const IC={
+ cal:'<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="3" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>',
+ fire:'<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 2.5c.4 3.1 2.2 4.6 3.6 6.3 1.3 1.6 2.1 3.2 2.1 5.4A7.2 7.2 0 0 1 12 21.5a7.2 7.2 0 0 1-7.2-7.3c0-2.6 1.3-4.6 3-6.1-.1 1.9.6 3.3 1.9 3.9-.4-3.5 1.3-6.6 3.8-9.5Z"/></svg>',
+ star:'<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.8 2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4L2.8 9.5l6.4-.8Z"/></svg>',
+ check:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+ cross:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/></svg>',
+ mic:'<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8.5" y="3" width="7" height="11.5" rx="3.5" fill="currentColor"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>',
+ sound:'<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4.5 4.5 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>'
+};
+
+/* ===== Задания — только из текста файла ===== */
+const segs=s=>[...s.matchAll(/\*\*(.+?)\*\*/g)].map(m=>m[1]);
+const sentences=q=>q.a.split(/(?<=[.!?])\s+/);
+const MONTH=/(января|марта|мая|сентября|ноября)/;
+const kindOf=s=>MONTH.test(s)?'date':/\d{4}/.test(s)?'year':'text';
+const DATES=['3 марта','1 марта','24 мая','6 мая','6 сентября','22 сентября','1 ноября'];
+const YEARS=['1877–1878 гг.','1885 г.','1964 г.'];
+function gapTargets(q){
+ const out=[];
+ sentences(q).forEach(sent=>{
+  const inSent=segs(sent),txt=low(plain(sent));
+  inSent.forEach(seg=>{
+   const k=kindOf(seg);let pool;
+   if(k==='date')pool=DATES.filter(d=>!txt.includes(low(d)));
+   else if(k==='year')pool=YEARS.filter(y=>!y.match(/\d{4}/g).some(n=>txt.includes(n)));
+   else pool=segs(q.a).filter(s=>kindOf(s)==='text'&&!inSent.includes(s)&&!txt.includes(low(s)));
+   pool=[...new Set(pool)];
+   if(pool.length>=2)out.push({sent,seg,pool});
+  });
+ });
+ return out;
+}
+function others(q,n){
+ const ok=x=>x.id!==q.id&&x.g===q.g&&!(q.avoid||[]).includes(x.id)&&!(x.avoid||[]).includes(q.id);
+ return shuffle(NP.filter(ok)).slice(0,n);
+}
+const sameGroupLists=q=>NP.filter(x=>x.list&&x.id!==q.id&&x.g===q.g);
+function exercisesFor(id){
+ const q=QM[id];if(!isHard(q))return [];
+ const ex=[];
+ if(!q.noRev)ex.push({k:'reverse',id});
+ if(gapTargets(q).length)ex.push({k:'gap',id});
+ if(q.pairs)ex.push({k:'match',id});
+ if(q.chunks)ex.push({k:'build',id});
+ if(q.list&&sameGroupLists(q).length)ex.push({k:'list',id});
+ return ex;
+}
+const hasChoice=id=>{const q=QM[id];return !q.personal&&q.lvl!=='easy'};
+
+/* ===== Сохранение и прогресс =====
+   Уровни: 0 — новый; 1 — прочитал; 2 — вспомнил один раз; 3 — вспомнил в другой день (выучено); 4 — прочно.
+   «Не вспомнил» возвращает на уровень 1 и ставит вопрос на повторение сразу. */
+const INTERVAL=[0,0,1,3,6];
+const blank=()=>({v:2,q:{},les:{},xp:0,days:{},notes:{},exams:[],theme:'dark',readAloud:false});
+function load(){
+ let s=null;try{s=JSON.parse(localStorage.getItem(KEY)||'null')}catch(e){}
+ if(!s||typeof s.q!=='object'||!s.q)s=blank();
+ if(s.v===1){for(const id in s.q){const e=s.q[id];if(e&&e.lv===undefined){e.lv=e.seen?(e.str>=4?2:1):0;e.due=0;e.okDay=''}}s.v=2}
+ const b=blank();for(const k in b)if(s[k]===undefined||s[k]===null)s[k]=b[k];
+ if(!Object.keys(s.notes).length){try{const old=JSON.parse(localStorage.getItem('bg-final.v3')||'null');if(old&&old.notes)for(const id of ['1','5','7','11'])if(typeof old.notes[id]==='string'&&old.notes[id].trim())s.notes[id]=old.notes[id].slice(0,1500)}catch(e){}}
+ return s;
+}
+let S=load();
+const applyTheme=()=>{document.documentElement.dataset.theme=S.theme==='light'?'light':'dark'};applyTheme();
+let storageOK=true;
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));storageOK=true}catch(e){storageOK=false}}
+const P=id=>S.q[id]||(S.q[id]={lv:0,due:0,last:0,okDay:'',weak:0});
+const lv=id=>S.q[id]?.lv||0;
+const known=id=>lv(id)>=3;
+const knownCount=()=>Q.filter(q=>known(q.id)).length;
+const learningCount=()=>Q.filter(q=>lv(q.id)>=1&&lv(q.id)<3).length;
+const isDue=id=>lv(id)>=1&&(S.q[id].due||0)<=Date.now();
+const dueIds=()=>Q.filter(q=>isDue(q.id)).map(q=>q.id);
+function remember(id,ok){
+ const p=P(id),t=dkey(new Date());p.last=Date.now();
+ if(ok){if(p.lv<2)p.lv=2;else if(p.okDay!==t)p.lv=Math.min(4,p.lv+1);p.okDay=t;p.due=today0()+INTERVAL[p.lv]*DAY}
+ else{p.lv=1;p.due=0;p.okDay='';p.weak=(p.weak||0)+1}
+ save();
+}
+function streak(){const d=new Date();if(!S.days[dkey(d)])d.setDate(d.getDate()-1);let n=0;while(S.days[dkey(d)]){n++;d.setDate(d.getDate()-1)}return n}
+function addXp(n){S.xp+=n;const k=dkey(new Date());S.days[k]=(S.days[k]||0)+Math.max(1,n)}
+function daysLeft(){return Math.round((EXAM_DAY-today0())/DAY)}
+function tomorrowCount(){const end=today0()+2*DAY;return Q.filter(q=>lv(q.id)>=1&&(S.q[q.id].due||0)<end&&(S.q[q.id].due||0)>Date.now()).length}
+
+/* ===== Приложение (офлайн) ===== */
+const IS_APP=!!document.querySelector('link[rel="manifest"]');
+const STANDALONE=matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
+let installEvt=null;
+if(IS_APP&&'serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
+if(IS_APP&&navigator.storage&&navigator.storage.persist)navigator.storage.persist().catch(()=>{});
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installEvt=e;if(!L)render()});
+window.addEventListener('appinstalled',()=>{installEvt=null;toast('Приложение установлено. Открывай его с иконки.');if(!L)render()});
+window.addEventListener('online',()=>{if(!L&&view==='me')renderMe()});
+window.addEventListener('offline',()=>{if(!L&&view==='me')renderMe()});
+
+/* ===== Голос: озвучка вопроса и ответ через микрофон ===== */
+const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+const TTS='speechSynthesis' in window;
+let rec=null;
+function speak(text){
+ if(!TTS){toast('В этом браузере нет озвучки.');return}
+ try{const vs=speechSynthesis.getVoices(),v=vs.find(v=>/^ru/i.test(v.lang));
+  speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='ru-RU';if(v)u.voice=v;u.rate=.95;speechSynthesis.speak(u);
+  if(vs.length&&!v)toast('Нет русского голоса в системе — может читать с акцентом.');
+ }catch(e){toast('Озвучка недоступна.')}
+}
+function stopVoice(){if(rec){try{rec.abort()}catch(e){}rec=null}if(TTS)try{speechSynthesis.cancel()}catch(e){}}
+if(TTS)try{speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>{}}catch(e){}
+const words=s=>low(s).replace(/[^a-zа-я0-9]+/g,' ').split(' ').filter(w=>w&&(w.length>2||/\d/.test(w)));
+const stem=w=>/\d/.test(w)?w:w.length>4?w.slice(0,Math.max(4,Math.ceil(w.length*.6))):w;
+function keyHit(key,heard){const hs=words(heard);return words(key).every(kw=>{const k=stem(kw);return hs.some(h=>h===kw||h.startsWith(k)||(stem(h)===k))})}
+function voiceKeys(q){return q.keys||(q.list?q.list:segs(q.a).length?segs(q.a):[plain(q.s)])}
+function listen(st){
+ if(!SR){toast(IS_APP?'Этот браузер не распознаёт речь. Отвечай вслух и открывай ответ.':'Микрофон работает в приложении. Здесь — отвечай вслух и открывай ответ.');return}
+ if(rec){try{rec.stop()}catch(e){}return}
+ if(!navigator.onLine){toast('Распознавание речи работает только с интернетом. Без сети отвечай вслух и открывай ответ.');return}
+ const r=new SR();rec=r;r.lang='ru-RU';r.interimResults=true;r.continuous=true;
+ let fin='';st.ui.listening=true;st.ui.heard='';renderStep();
+ r.onresult=e=>{let tmp='';for(let i=e.resultIndex;i<e.results.length;i++){const x=e.results[i];if(x.isFinal)fin+=x[0].transcript+' ';else tmp+=x[0].transcript}st.ui.heard=(fin+tmp).trim();const el=document.getElementById('heard');if(el)el.textContent=st.ui.heard||'…'};
+ r.onerror=e=>{const m={'not-allowed':'Нет доступа к микрофону. Разреши микрофон в настройках браузера для этой страницы.','service-not-allowed':'Нет доступа к микрофону. Разреши микрофон в настройках браузера для этой страницы.','network':'Распознавание речи работает только с интернетом.','no-speech':'Ничего не услышал. Нажми ещё раз и говори громче.','audio-capture':'Микрофон не найден.'}[e.error];if(m)toast(m)};
+ r.onend=()=>{if(rec===r)rec=null;st.ui.listening=false;if(L&&!L.finished&&cur()===st){if(st.ui.heard)st.ui.revealed=true;renderStep()}};
+ try{r.start()}catch(e){rec=null;st.ui.listening=false;toast('Не получилось включить микрофон.');renderStep()}
+}
+
+/* ===== Общие части экрана ===== */
+let view='path',L=null,listFilter='',hideAns=false,opened=new Set(),resetAsk=false,toastT;
+function toast(m){const t=document.getElementById('toast');t.textContent=m;t.hidden=false;clearTimeout(toastT);toastT=setTimeout(()=>t.hidden=true,4200)}
+function top(){
+ const d=daysLeft(),st=streak();
+ return `<div class="top"><div class="brand"><span class="cord" aria-hidden="true"></span>Болгария <small>к 6 октября</small></div><div class="stats">
+ ${d>=0?`<span class="chip days" title="До собеседования 6 октября">${IC.cal}${d===0?'Сегодня':d+' '+plural(d,'день','дня','дней')}</span>`:''}
+ <span class="chip fire ${st?'':'off'}" title="Дней подряд">${IC.fire}${st}</span>
+ <span class="chip known" title="Выучено вопросов">${IC.star}${knownCount()}/22</span><button class="icon-btn" data-act="theme" aria-label="${S.theme==='light'?'Включить тёмную тему':'Включить светлую тему'}">◐</button></div></div>`;
+}
+const lvlDots=id=>{const v=lv(id);return `<span class="lvl" title="${['Новый','Прочитал','Вспомнил раз','Выучено','Прочно'][v]}">${[1,2,3,4].map(k=>`<i class="${v>=k?(k>=3?'g':'y'):''}"></i>`).join('')}</span>`};
+function progressCard(){
+ const k=knownCount(),l=learningCount(),n=22-k-l;
+ return `<div class="pcard"><div class="pt"><span>Выучено ${k} из 22</span><span>${k===22?'Всё выучено':'«Выучено» — когда вспомнил в два разных дня'}</span></div>
+ <div class="pbar" aria-hidden="true"><i class="g" style="width:${k/22*100}%"></i><i class="y" style="width:${l/22*100}%"></i></div>
+ <div class="plegend"><span><i class="dot g"></i>Выучено <b>${k}</b></span><span><i class="dot y"></i>Учу <b>${l}</b></span><span><i class="dot n"></i>Новые <b>${n}</b></span></div></div>`;
+}
+function setTab(v){stopVoice();view=v;L=null;resetAsk=false;render();window.scrollTo(0,0)}
+function render(){
+ document.body.classList.toggle('in-lesson',!!L&&!L.finished);
+ document.querySelectorAll('.tab').forEach(b=>b.dataset.tab===view&&!L?b.setAttribute('aria-current','page'):b.removeAttribute('aria-current'));
+ if(L){L.finished?renderDone():renderStep();return}
+ ({path:renderPath,exam:renderExam,list:renderList,me:renderMe})[view]();
+}
+
+/* ===== Главная ===== */
+function renderPath(){
+ const next=LESSONS.find(l=>!S.les[l.id]);
+ const seen=Q.filter(q=>lv(q.id)>=1).length,due=dueIds().length,tom=tomorrowCount();
+ const nodes=LESSONS.map((l,i)=>{
+  const rec=S.les[l.id],isNext=next&&next.id===l.id,k=l.ids.filter(known).length;
+  const sub=rec?`Выучено ${k} из ${l.ids.length}`:`Вопросы № ${l.ids.map(id=>QM[id].n).join(', ')}`;
+  return `<button class="node ${rec?'done':''} ${isNext?'next':''}" data-act="start" data-l="${l.id}"><span class="disc">${isNext?'<span class="bubble">Начать</span>':''}${rec?IC.check:i+1}</span><span class="txt"><span class="t">${esc(l.title)}</span><span class="s">${sub}</span></span></button>`;
+ }).join('')+`<button class="node exam" data-act="tab" data-v="exam"><span class="disc">${IC.mic}</span><span class="txt"><span class="t">Проверь себя</span><span class="s">Как на собеседовании</span></span></button>`;
+ let reviewBtn='';
+ if(due)reviewBtn=`<button class="btn ${next?'':'primary'}" data-act="review">Повторить сегодня · ${due} ${plural(due,'вопрос','вопроса','вопросов')}</button>`;
+ else if(seen)reviewBtn=`<div class="info">На сегодня повторять нечего.${tom?` Завтра на повторение: <b>${tom}</b>.`:''}</div>`;
+ app.innerHTML=`${top()}
+ <h1>${next?(seen?'Продолжаем':'22 вопроса из файла'):'Все уроки пройдены'}</h1>
+ <p class="lead">${next?'Всё на русском. Вопрос — ответ, как в файле. Сложные ответы разбираем подробно, простые — только вспоминаем.':'Повторяй то, что приложение просит сегодня, и проверяй себя.'}</p>
+ ${seen?progressCard():`<ol class="how"><li><b>1. Читаешь</b>Вопрос и сразу ответ из файла</li><li><b>2. Закрепляешь</b>Задания — только по сложным ответам</li><li><b>3. Вспоминаешь</b>Говоришь ответ сам, можно в микрофон</li></ol>`}
+ <div class="stack">
+ ${next?`<button class="btn primary" data-act="start" data-l="${next.id}">Урок ${LESSONS.indexOf(next)+1}: ${esc(next.title)}</button>`:(due?'':`<button class="btn primary" data-act="tab" data-v="exam">Проверь себя</button>`)}
+ ${reviewBtn}
+ ${IS_APP&&installEvt&&!STANDALONE?`<button class="btn" data-act="install">Установить приложение на телефон</button>`:''}
+ </div>
+ <div class="path">${nodes}</div>`;
+}
+
+/* ===== Сессии ===== */
+function newSession(kind,title,steps,ids,lid){stopVoice();L={kind,title,queue:steps,i:0,ids,lid,phase:'answer',correct:0,wrong:0,xp:0,combo:0,started:Date.now(),res:[],rec:{},finished:false,confirmQuit:false};render();window.scrollTo(0,0)}
+function startLesson(lid){
+ const l=LESSONS.find(x=>x.id===lid),steps=[],mix=[];
+ l.ids.forEach(id=>{steps.push({k:'intro',id});if(hasChoice(id))steps.push({k:'choice',id})});
+ l.ids.forEach(id=>mix.push(...exercisesFor(id)));
+ steps.push(...shuffle(mix));
+ shuffle(l.ids).forEach(id=>steps.push({k:'recall',id}));
+ newSession('lesson',`Урок ${LESSONS.indexOf(l)+1} · ${l.title}`,steps,l.ids,lid);
+}
+function oneExercise(id){const ex=exercisesFor(id);if(ex.length)return pick([{k:'choice',id},...ex]);return QM[id].lvl==='mid'?{k:'choice',id}:null}
+function startReview(){
+ let ids=dueIds().sort((a,b)=>lv(a)-lv(b)||(S.q[b].weak||0)-(S.q[a].weak||0)).slice(0,8);
+ if(!ids.length){toast('На сегодня всё повторено.');return}
+ newSession('review','Повторение',[...shuffle(ids.map(oneExercise).filter(Boolean)),...shuffle(ids).map(id=>({k:'recall',id}))],ids);
+}
+function startMistakes(ids){
+ const steps=[];ids.forEach(id=>{steps.push({k:'intro',id,again:true});const e=oneExercise(id);if(e)steps.push(e)});
+ shuffle(ids).forEach(id=>steps.push({k:'recall',id}));
+ newSession('review','Работа над ошибками',steps,ids);
+}
+function startExam(mode){
+ const ids=mode==='hard'?shuffle(HARD):shuffle(Q.map(q=>q.id)).slice(0,mode==='10'?10:22);
+ const title={hard:'Проверь себя · сложные','10':'Проверь себя · 10'}[mode]||'Проверь себя · все 22';
+ newSession('exam',title,ids.map(id=>({k:'exam',id})),ids);
+}
+function prep(st){
+ const q=QM[st.id],u=st.ui={sel:null};
+ if(st.k==='choice'){u.opts=shuffle([q.s,...others(q,3).map(x=>x.s)]);u.right=q.s}
+ if(st.k==='reverse'){u.opts=shuffle([q.q,...others(q,3).map(x=>x.q)]);u.right=q.q}
+ if(st.k==='gap'){const g=pick(gapTargets(q));u.sent=g.sent;u.seg=g.seg;u.opts=shuffle([g.seg,...shuffle(g.pool).slice(0,3)]);u.right=g.seg}
+ if(st.k==='build'){u.bank=shuffle([...q.chunks]);u.line=[]}
+ if(st.k==='list'){const extra=shuffle(sameGroupLists(q).flatMap(x=>x.list)).slice(0,3);u.bank=shuffle([...q.list,...extra]);u.line=[]}
+ if(st.k==='match'){u.left=shuffle(q.pairs.map((_,i)=>i));u.rightCol=shuffle(q.pairs.map((_,i)=>i));u.done=[];u.errs=0;u.pick=null;u.flash=null}
+}
+const cur=()=>L.queue[L.i];
+
+/* ===== Экран шага ===== */
+function renderStep(){
+ const st=cur();if(!st.ui)prep(st);
+ if(st.k==='exam'&&S.readAloud&&!st.ui.spoken){st.ui.spoken=true;speak(QM[st.id].q)}
+ const pct=Math.round(L.i/L.queue.length*100);
+ app.innerHTML=`<div class="lesson-top"><button class="x" data-act="quit" aria-label="Выйти">×</button><div class="bar" role="progressbar" aria-label="${esc(L.title)}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}"><i style="width:${pct}%"></i></div>${L.combo>=3?`<span class="combo">${L.combo} подряд</span>`:''}</div>
+ <div class="stack">${stepBody(st)}</div>${footer(st)}${L.confirmQuit?quitSheet():''}`;
+}
+const answerCard=(q,label)=>`<div class="answer"><span class="lab">${label}</span><p>${md(q.a)}</p></div>${q.note?`<div class="note">${esc(q.note)}</div>`:''}`;
+function mineCard(q){const n=(S.notes[q.id]||'').trim();return n?`<div class="mine"><span class="lab">Твой ответ</span><p>${esc(n)}</p></div>`:''}
+function voiceTools(st,q){
+ const u=st.ui;
+ return `<div class="tools">
+ <button class="tool ${u.listening?'on':''}" data-act="listen">${IC.mic}${u.listening?'Слушаю… нажми, когда закончишь':'Ответить голосом'}</button>
+ ${TTS?`<button class="tool" data-act="readq">${IC.sound}Прочитать вопрос</button>`:''}</div>`;
+}
+function heardBlock(st,q){
+ const u=st.ui;if(!u.listening&&!u.heard)return '';
+ let chk='';
+ if(!u.listening&&u.heard&&!q.personal){
+  const ks=voiceKeys(q),hit=ks.map(k=>keyHit(k,u.heard));const n=hit.filter(Boolean).length;
+  chk=`<div class="kchk">${ks.map((k,i)=>`<span class="kc ${hit[i]?'ok':''}">${hit[i]?'✓':'✗'} ${esc(k)}</span>`).join('')}</div><div class="kcsum">Главного прозвучало: ${n} из ${ks.length}. Распознавание неточное — решай сам, знал ли.</div>`;
+ }
+ return `<div class="heard"><span class="lab">${u.listening?'Слушаю':'Ты сказал'}</span><p id="heard">${esc(u.heard||'…')}</p>${chk}</div>`;
+}
+function stepBody(st){
+ const q=QM[st.id],u=st.ui,fb=L.phase==='feedback';
+ if(st.k==='intro'){
+  return `<div class="kind new">${st.again?'Повторим':'Новый вопрос'} · №${q.n}${isHard(q)?'':' · простой'}</div>
+  <h2 class="prompt">${esc(q.q)}</h2>
+  ${answerCard(q,q.personal?'Как отвечать':'Ответ')}
+  ${q.personal?`<div class="field"><label for="note-${q.id}">Напиши свой ответ</label><span class="b">Он будет показан при проверке. Можно заполнить позже во вкладке «О себе».</span><textarea id="note-${q.id}" data-note="${q.id}" placeholder="${esc(plain(q.a))}">${esc(S.notes[q.id]||'')}</textarea></div>`:''}`;
+ }
+ if(st.k==='recall'||st.k==='exam'){
+  const head=st.k==='exam'?`<div class="kind exam">Вопрос ${L.i+1} из ${L.queue.length}</div><h2 class="prompt">${esc(q.q)}</h2>`
+   :`<div class="kind recall">Вспомни сам · №${q.n}</div><h2 class="prompt">${esc(q.q)}</h2>`;
+  if(!u.revealed)return head+(u.listening||u.heard?'':`<div class="say">${IC.mic}<span>Скажи ответ вслух. Потом открой и сравни.</span></div>`)+heardBlock(st,q)+voiceTools(st,q);
+  return head+heardBlock(st,q)+(q.personal?(mineCard(q)||answerCard(q,'Как отвечать')):answerCard(q,'Ответ из файла'));
+ }
+ if(st.k==='choice')return `<div class="kind">Выбери ответ</div><h2 class="prompt">${esc(q.q)}</h2>${optList(u,fb)}`;
+ if(st.k==='reverse')return `<div class="kind">На какой вопрос этот ответ?</div><div class="given">${esc(q.s)}</div>${optList(u,fb)}`;
+ if(st.k==='gap'){
+  const cls=fb?(u.opts[u.sel]===u.right?'ok':'bad'):'';
+  const slot=`<span class="slot ${cls}">${u.sel!=null?esc(u.opts[u.sel]):'&nbsp;'}</span>`;
+  const i=u.sent.indexOf('**'+u.seg+'**');
+  const txt=esc(plain(u.sent.slice(0,i)))+slot+esc(plain(u.sent.slice(i+u.seg.length+4)));
+  return `<div class="kind">Вставь пропущенное</div><p class="ctx">№${q.n}. ${esc(q.q)}</p><p class="sent">${txt}</p>
+  <div class="chips">${u.opts.map((o,j)=>`<button class="tok" data-act="pick" data-i="${j}" aria-pressed="${u.sel===j}" ${fb?'disabled':''}>${esc(o)}</button>`).join('')}</div>`;
+ }
+ if(st.k==='build'||st.k==='list'){
+  const ok=fb&&checkBuild(st);
+  const title=st.k==='build'?'Собери ответ по порядку':'Выбери всё, что входит в ответ';
+  return `<div class="kind">${title}</div><h2 class="prompt">${esc(q.q)}</h2>
+  <div class="buildline ${fb?(ok?'ok':'bad'):''}">${u.line.map((bi,pos)=>`<button class="tok" data-act="unline" data-i="${pos}" ${fb?'disabled':''}>${esc(u.bank[bi])}</button>`).join('')}</div>
+  <div class="chips">${u.bank.map((t,bi)=>u.line.includes(bi)?`<span class="tok ghost" aria-hidden="true">${esc(t)}</span>`:`<button class="tok" data-act="bank" data-i="${bi}" ${fb?'disabled':''}>${esc(t)}</button>`).join('')}</div>`;
+ }
+ if(st.k==='match'){
+  const cell=(side,i,text)=>{const d=u.done.includes(i),p=u.pick&&u.pick.side===side&&u.pick.i===i,f=u.flash&&u.flash.includes(side+i);
+   return `<button class="m ${d?'done':''} ${f?'err':''}" data-act="m" data-side="${side}" data-i="${i}" aria-pressed="${p}" ${d||fb?'disabled':''}>${esc(text)}</button>`};
+  return `<div class="kind">Соедини пары</div><h2 class="prompt">${esc(q.q)}</h2>
+  <div class="match"><div class="col">${u.left.map(i=>cell('l',i,q.pairs[i][0])).join('')}</div><div class="col">${u.rightCol.map(i=>cell('r',i,q.pairs[i][1])).join('')}</div></div>`;
+ }
+ return '';
+}
+function optList(u,fb){
+ return `<div class="opts">${u.opts.map((o,i)=>{let c='';if(fb){if(o===u.right)c='ok';else if(i===u.sel)c='bad'}
+  return `<button class="opt ${c}" data-act="pick" data-i="${i}" aria-pressed="${u.sel===i&&!fb}" ${fb?'disabled':''}><span class="num">${i+1}</span><span>${esc(o)}</span></button>`}).join('')}</div>`;
+}
+function canCheck(st){const u=st.ui;if(['choice','reverse','gap'].includes(st.k))return u.sel!=null;if(st.k==='build'||st.k==='list')return u.line.length>0;return false}
+function checkBuild(st){
+ const q=QM[st.id],got=st.ui.line.map(bi=>st.ui.bank[bi]);
+ if(st.k==='build')return got.join('|')===q.chunks.join('|');
+ return got.length===q.list.length&&q.list.every(x=>got.includes(x));
+}
+function footer(st){
+ if(L.phase==='feedback'){
+  return `<div class="foot ${L.fbOk?'good':'bad'}"><div class="foot-in"><div class="fb"><span class="ic">${L.fbOk?IC.check:IC.cross}</span><div><div class="fb-title">${esc(L.fbTitle)}</div>${L.fbText?`<div class="fb-body">${L.fbText}</div>`:''}</div></div><button class="btn ${L.fbOk?'good':'danger'}" data-act="next" data-main>Дальше</button></div></div>`;
+ }
+ let inner;
+ if(st.k==='intro')inner=`<button class="btn primary" data-act="learned" data-main>Запомнил, дальше</button>`;
+ else if(st.k==='recall'||st.k==='exam')inner=st.ui.revealed?`<div class="row2"><button class="btn outline-red" data-act="rate" data-ok="0">Не знал</button><button class="btn good" data-act="rate" data-ok="1">Знал</button></div>`:`<button class="btn blue" data-act="reveal" data-main>Показать ответ</button>`;
+ else if(st.k==='match')inner=`<button class="btn" disabled>Соедини все пары</button>`;
+ else inner=`<button class="btn primary" data-act="check" data-main ${canCheck(st)?'':'disabled'}>Проверить</button>`;
+ return `<div class="foot"><div class="foot-in">${inner}</div></div>`;
+}
+function quitSheet(){
+ return `<div class="sheet-bg" data-act="stay"><div class="sheet" role="dialog" aria-modal="true" aria-labelledby="qt"><div class="sheet-in"><h2 id="qt">Выйти?</h2><p>Всё, что ты уже ответил, сохранено.${L.kind==='lesson'?' Урок потом начнётся сначала.':''}</p><button class="btn primary" data-act="stay">Продолжить</button><button class="btn outline-red" data-act="leave">Выйти</button></div></div></div>`;
+}
+
+/* ===== Логика ===== */
+const GOOD=['Верно!','Отлично!','Точно!','Так держать!','Правильно!'];
+function grade(id,ok){
+ const p=P(id);
+ if(ok){L.correct++;L.combo++;L.xp+=10;addXp(10)}else{L.wrong++;L.combo=0;p.weak=(p.weak||0)+1}
+ save();
+}
+function requeue(st,max){const r=st.r||0;if(r>=max)return;const copy={k:st.k,id:st.id,r:r+1};
+ const j=st.k==='recall'?-1:L.queue.findIndex((x,idx)=>idx>L.i&&x.k==='recall');
+ if(j>0)L.queue.splice(j,0,copy);else L.queue.push(copy)}
+function feedback(ok,text){
+ L.phase='feedback';L.fbOk=ok;L.fbTitle=ok?pick(GOOD):'Не совсем';
+ L.fbText=ok?'':`Правильно: ${text}<small>Этот вопрос ещё вернётся.</small>`;
+}
+function doCheck(){
+ const st=cur(),u=st.ui,q=QM[st.id];if(L.phase!=='answer'||!canCheck(st))return;
+ let ok,text;
+ if(st.k==='build'||st.k==='list'){ok=checkBuild(st);text=esc((st.k==='build'?q.chunks:q.list).join(st.k==='build'?' ':', '))}
+ else{ok=u.opts[u.sel]===u.right;text=st.k==='gap'?esc(plain(u.sent)):esc(u.right)}
+ grade(st.id,ok);if(!ok)requeue(st,2);feedback(ok,text);renderStep();
+}
+function next(){stopVoice();L.i++;L.phase='answer';if(L.i>=L.queue.length){finish();return}renderStep();window.scrollTo(0,0)}
+function finish(){
+ L.finished=true;
+ if(L.kind==='lesson'){const acc=Math.round(L.correct/Math.max(1,L.correct+L.wrong)*100),prev=S.les[L.lid];S.les[L.lid]={n:(prev?.n||0)+1,best:Math.max(prev?.best||0,acc)}}
+ if(L.kind==='exam'){const good=L.res.filter(r=>r.ok).length;S.exams.unshift({at:Date.now(),good,total:L.res.length});S.exams=S.exams.slice(0,15)}
+ save();render();window.scrollTo(0,0);
+}
+function onMatch(side,i){
+ const st=cur(),u=st.ui,q=QM[st.id];if(L.phase!=='answer'||u.done.includes(i))return;
+ if(!u.pick||u.pick.side===side){u.pick={side,i};renderStep();return}
+ if(u.pick.i===i){u.done.push(i);u.pick=null;
+  if(u.done.length===q.pairs.length){const ok=u.errs===0;grade(st.id,ok);if(!ok)requeue(st,1);
+   feedback(ok,q.pairs.map(p=>esc(p[0])+' — '+esc(p[1])).join('<br>'));if(!ok)L.fbTitle='Были ошибки'}
+  renderStep();return}
+ u.errs++;u.flash=[u.pick.side+u.pick.i,side+i];u.pick=null;renderStep();
+ setTimeout(()=>{if(L&&!L.finished&&cur()===st){u.flash=null;renderStep()}},450);
+}
+
+/* ===== Итоги ===== */
+function statusChip(id){
+ const r=L.rec[id];
+ if(r===true)return `<span class="st ok">Вспомнил${known(id)?' · выучено':' · повторим завтра'}</span>`;
+ if(r===false)return `<span class="st bad">Не вспомнил · повторим сегодня</span>`;
+ return '';
+}
+function renderDone(){
+ if(L.kind==='exam'){
+  const good=L.res.filter(r=>r.ok).length,miss=L.res.filter(r=>!r.ok).map(r=>r.id);
+  const msg=good===L.res.length?'Всё знаешь. Так и отвечай 6 октября.':good>=L.res.length*.8?'Почти готов. Подтяни ответы ниже.':'Пройди работу над ошибками — там ответы покажутся ещё раз.';
+  app.innerHTML=`<div class="done-hero"><div class="medal">${good===L.res.length?IC.star:IC.mic}</div><h1>${good} из ${L.res.length}</h1><p class="lead">${msg}</p></div>
+  ${miss.length?`<h2 class="h2">Эти ответы повтори</h2><ul class="learned">${miss.map(id=>`<li class="miss">№${QM[id].n}. ${esc(QM[id].q)}<em>${esc(plain(QM[id].a))}</em></li>`).join('')}</ul>`:''}
+  <div class="stack">${miss.length?`<button class="btn primary" data-act="mist" data-ids="${miss.join(',')}">Работа над ошибками</button>`:''}<button class="btn ${miss.length?'':'primary'}" data-act="home">На главную</button></div>`;
+  return;
+ }
+ const acc=Math.round(L.correct/Math.max(1,L.correct+L.wrong)*100),sec=Math.round((Date.now()-L.started)/1000);
+ app.innerHTML=`<div class="done-hero"><div class="medal">${IC.check}</div><h1>${L.kind==='lesson'?'Урок пройден!':'Готово!'}</h1><p class="lead">${esc(L.title)}</p></div>
+ <div class="tiles"><div class="tile gold"><span>Опыт</span><strong>+${L.xp}</strong></div><div class="tile green"><span>Точность</span><strong>${L.correct+L.wrong?acc+'%':'—'}</strong></div><div class="tile blue"><span>Время</span><strong>${Math.floor(sec/60)}:${String(sec%60).padStart(2,'0')}</strong></div></div>
+ <h2 class="h2">Вопросы</h2>
+ <ul class="learned">${L.ids.map(id=>{const q=QM[id];return `<li>№${q.n}. ${esc(q.q)}<em>${q.personal&&S.notes[id]?esc(S.notes[id]):esc(q.s)}</em>${statusChip(id)}</li>`}).join('')}</ul>
+ <div class="info" style="margin-bottom:16px">Вопрос станет <b>выученным</b>, когда ты вспомнишь его ещё раз в другой день. Приложение само позовёт повторить.</div>
+ <div class="stack"><button class="btn primary" data-act="home">Продолжить</button></div>`;
+}
+
+/* ===== Проверь себя ===== */
+function renderExam(){
+ const seen=Q.filter(q=>lv(q.id)>=1).length;
+ app.innerHTML=`${top()}<h1>Проверь себя</h1>
+ <p class="lead">Как на собеседовании: вопросы вразнобой. Отвечаешь вслух или в микрофон, открываешь ответ и честно отмечаешь «знал» или «не знал».</p>
+ ${seen<22?`<div class="info" style="margin-bottom:14px">Пройдено в уроках: <b>${seen} из 22</b>. Лучше сначала пройти уроки.</div>`:''}
+ <div class="stack">
+ ${TTS?`<label class="switch" for="readaloud"><input type="checkbox" id="readaloud" ${S.readAloud?'checked':''}>Читать вопросы вслух — как консул</label>`:''}
+ <button class="btn primary" data-act="exam" data-mode="22">Все 22 вопроса</button>
+ <button class="btn" data-act="exam" data-mode="hard">Только сложные · ${HARD.length}</button>
+ <button class="btn" data-act="exam" data-mode="10">Быстро · 10 вопросов</button></div>
+ ${S.exams.length?`<h2 class="h2">Прошлые результаты</h2><ul class="hist">${S.exams.map(x=>{const d=new Date(x.at);return `<li><span>${x.good} из ${x.total}</span><span>${d.getDate()}.${String(d.getMonth()+1).padStart(2,'0')} · ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}</span></li>`}).join('')}</ul>`:''}`;
+}
+
+/* ===== Все ответы ===== */
+function renderList(){
+ app.innerHTML=`${top()}<h1>Все 22 ответа</h1><p class="lead">Как в файле, по порядку. Можно закрыть ответы и проверять себя: нажми на ответ, чтобы открыть.</p>
+ <div class="stack" style="margin-bottom:8px"><label class="switch" for="hideans"><input type="checkbox" id="hideans" ${hideAns?'checked':''}>Закрыть ответы</label>
+ <input id="search" class="search" type="search" placeholder="Поиск: гимн, 3 марта, Левски…" aria-label="Поиск" value="${esc(listFilter)}"></div><div id="qa-list"></div>`;
+ renderListItems();
+}
+function renderListItems(){
+ const f=low(listFilter.trim());
+ const items=Q.filter(q=>!f||low([q.q,plain(q.a),String(q.n)].join(' ')).includes(f));
+ document.getElementById('qa-list').innerHTML=items.length?items.map(q=>{const hid=hideAns&&!opened.has(q.id);
+  return `<div class="qa"><div class="head"><span class="n">${q.n}</span><div><span class="q">${esc(q.q)}</span>${q.personal?'<span class="tag">о себе</span>':''}${q.note?'<span class="tag red">изменилось</span>':''}${lvlDots(q.id)}</div></div>
+  <div class="a ${hid?'hidden':''}" ${hid?`data-act="open" data-id="${q.id}" role="button" tabindex="0" aria-label="Показать ответ"`:''}>${q.personal&&S.notes[q.id]?`<b>${esc(S.notes[q.id])}</b>`:md(q.a)}${q.note&&!hid?`<div class="note" style="margin-top:8px">${esc(q.note)}</div>`:''}</div></div>`}).join(''):`<p class="lead" style="margin-top:16px">Ничего не нашлось.</p>`;
+}
+
+/* ===== О себе ===== */
+function appBlock(){
+ if(!IS_APP)return `<h2 class="h2">Приложение без интернета</h2><div class="info">Эта страница работает только с интернетом. Офлайн-версию с микрофоном можно установить на телефон как приложение — ссылка у Claude в чате.</div>`;
+ const online=navigator.onLine;
+ let how;
+ if(STANDALONE)how=`<div class="info"><b>Приложение установлено.</b> Работает без интернета. Микрофон распознаёт речь только при подключении к сети — без сети отвечай вслух и открывай ответ.</div>`;
+ else if(installEvt)how=`<button class="btn primary" data-act="install">Установить на телефон</button>`;
+ else how=`<div class="info"><b>Как установить:</b><ol><li><b>Android, Chrome:</b> меню ⋮ → «Установить приложение» или «Добавить на главный экран».</li><li><b>iPhone, Safari:</b> кнопка «Поделиться» → «На экран Домой».</li></ol></div>`;
+ return `<h2 class="h2">Приложение</h2><div class="stack"><span class="offline ${online?'':'no'}"><i></i>${online?'Есть интернет':'Нет интернета — всё равно работает'}</span>${how}</div>`;
+}
+function renderMe(){
+ const personal=Q.filter(q=>q.personal);
+ app.innerHTML=`${top()}<h1>О себе</h1><p class="lead">На эти вопросы в файле написано «отвечаете так, как есть». Напиши свой ответ коротко и правдиво — он будет показан при проверке.</p>
+ <div class="stack">${personal.map(q=>`<div class="field"><label for="me-${q.id}">№${q.n}. ${esc(q.q)}</label><span class="b">${esc(plain(q.a))}</span><textarea id="me-${q.id}" data-note="${q.id}">${esc(S.notes[q.id]||'')}</textarea><div class="saved" id="saved-${q.id}"></div></div>`).join('')}</div>
+ <h2 class="h2">Прогресс</h2>
+ ${progressCard()}
+ <ul class="hist"><li><span>Повторить сегодня</span><span>${dueIds().length}</span></li><li><span>Опыт</span><span>${S.xp}</span></li><li><span>Дней подряд</span><span>${streak()}</span></li><li><span>Проверок себя</span><span>${S.exams.length}${S.exams[0]?` · последняя ${S.exams[0].good} из ${S.exams[0].total}`:''}</span></li></ul>
+ <p class="lead" style="margin-top:14px;font-size:14px">${storageOK?'Прогресс сохраняется на этом устройстве, в этом браузере.':'Браузер не даёт сохранять прогресс (приватный режим?). После закрытия он пропадёт.'}</p>
+ ${appBlock()}
+ <div style="margin-top:22px">${resetAsk?`<div class="stack"><p style="margin:0;font-weight:700">Стереть весь прогресс? Твои ответы о себе останутся.</p><div class="row2"><button class="btn" data-act="reset-no">Отмена</button><button class="btn danger" data-act="reset-yes">Стереть</button></div></div>`:`<button class="btn ghost" data-act="reset" style="color:var(--red)">Начать заново</button>`}</div>`;
+}
+
+/* ===== События ===== */
+app.addEventListener('click',ev=>{
+ const b=ev.target.closest('[data-act]');if(!b||b.disabled)return;
+ if(b.classList.contains('sheet-bg')&&ev.target!==b)return;
+ const a=b.dataset.act,st=L&&!L.finished?cur():null;
+ switch(a){
+  case 'start':startLesson(b.dataset.l);break;
+  case 'review':startReview();break;
+  case 'exam':startExam(b.dataset.mode);break;
+  case 'mist':startMistakes(b.dataset.ids.split(','));break;
+  case 'tab':setTab(b.dataset.v);break;
+  case 'home':stopVoice();L=null;view='path';render();window.scrollTo(0,0);break;
+  case 'theme':S.theme=S.theme==='light'?'dark':'light';applyTheme();save();render();break;
+  case 'install':if(installEvt){installEvt.prompt();installEvt.userChoice.finally(()=>{installEvt=null;render()})}break;
+  case 'open':opened.add(b.dataset.id);renderListItems();break;
+  case 'pick':if(L.phase==='answer'){st.ui.sel=Number(b.dataset.i);renderStep()}break;
+  case 'bank':if(L.phase==='answer'){st.ui.line.push(Number(b.dataset.i));renderStep()}break;
+  case 'unline':if(L.phase==='answer'){st.ui.line.splice(Number(b.dataset.i),1);renderStep()}break;
+  case 'm':onMatch(b.dataset.side,Number(b.dataset.i));break;
+  case 'check':doCheck();break;
+  case 'next':next();break;
+  case 'learned':{const p=P(st.id);if(p.lv<1){p.lv=1;p.due=0}p.last=Date.now();if(!st.again){L.xp+=5;addXp(5)}save();next();break}
+  case 'reveal':stopVoice();st.ui.revealed=true;renderStep();break;
+  case 'listen':listen(st);break;
+  case 'readq':speak(QM[st.id].q);break;
+  case 'rate':{const ok=b.dataset.ok==='1';stopVoice();
+   remember(st.id,ok);L.rec[st.id]=ok;
+   if(st.k==='exam'){L.res.push({id:st.id,ok});if(ok){L.xp+=10;addXp(10)}}
+   else{if(ok){L.correct++;L.combo++;L.xp+=10;addXp(10)}else{L.wrong++;L.combo=0;requeue(st,1)}}
+   save();next();break}
+  case 'quit':L.confirmQuit=true;renderStep();break;
+  case 'stay':L.confirmQuit=false;renderStep();break;
+  case 'leave':{stopVoice();const v=L.kind==='exam'?'exam':'path';L=null;view=v;render();window.scrollTo(0,0);break}
+  case 'reset':resetAsk=true;renderMe();break;
+  case 'reset-no':resetAsk=false;renderMe();break;
+  case 'reset-yes':{const notes=S.notes,th=S.theme;S=blank();S.notes=notes;S.theme=th;save();resetAsk=false;renderMe();toast('Прогресс стёрт. Ответы о себе сохранены.');break}
+ }
+});
+app.addEventListener('input',ev=>{
+ const el=ev.target;
+ if(el.dataset.note){const v=el.value.slice(0,1500);if(v.trim())S.notes[el.dataset.note]=v;else delete S.notes[el.dataset.note];save();const s=document.getElementById('saved-'+el.dataset.note);if(s)s.textContent='Сохранено'}
+ if(el.id==='search'){listFilter=el.value;renderListItems()}
+});
+app.addEventListener('change',ev=>{
+ if(ev.target.id==='hideans'){hideAns=ev.target.checked;opened.clear();renderListItems()}
+ if(ev.target.id==='readaloud'){S.readAloud=ev.target.checked;save()}
+});
+document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>setTab(b.dataset.tab)));
+document.addEventListener('keydown',ev=>{
+ const t=ev.target;
+ if(view==='list'&&!L&&(ev.key==='Enter'||ev.key===' ')&&t.dataset&&t.dataset.act==='open'){ev.preventDefault();t.click();return}
+ if(!L||L.finished||(t.matches&&t.matches('textarea,input')))return;
+ if(ev.key==='Escape'){L.confirmQuit=!L.confirmQuit;renderStep();return}
+ if(L.confirmQuit)return;
+ if(ev.key==='Enter'){if(t.closest&&t.closest('button'))return;const b=app.querySelector('[data-main]:not(:disabled)');if(b){ev.preventDefault();b.click()}return}
+ const st=cur();if(L.phase!=='answer'||!st.ui||!st.ui.opts)return;
+ const n=Number(ev.key);if(n>=1&&n<=st.ui.opts.length){st.ui.sel=n-1;renderStep()}
+});
+document.addEventListener('visibilitychange',()=>{if(document.hidden){stopVoice();save()}else if(!L)render()});
+window.addEventListener('pagehide',()=>{stopVoice();save()});
+render();
+})();
+</script>
+
+</html>
