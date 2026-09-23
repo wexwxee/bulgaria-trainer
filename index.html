@@ -454,6 +454,7 @@ function daysLeft(){return Math.round((EXAM_DAY-today0())/DAY)}
 function tomorrowCount(){const end=today0()+2*DAY;return Q.filter(q=>lv(q.id)>=1&&(S.q[q.id].due||0)<end&&(S.q[q.id].due||0)>Date.now()).length}
 
 /* ===== Приложение (офлайн) ===== */
+const APP_URL='https://wexwxee.github.io/bulgaria-trainer/';
 const IS_APP=!!document.querySelector('link[rel="manifest"]');
 const STANDALONE=matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
 let installEvt=null;
@@ -763,7 +764,7 @@ function renderListItems(){
 
 /* ===== О себе ===== */
 function appBlock(){
- if(!IS_APP)return `<h2 class="h2">Приложение без интернета</h2><div class="info">Эта страница работает только с интернетом. Офлайн-версию с микрофоном можно установить на телефон как приложение — ссылка у Claude в чате.</div>`;
+ if(!IS_APP)return `<h2 class="h2">Приложение без интернета</h2><div class="info">Эта страница работает только с интернетом. Офлайн-версия с микрофоном: открой в Chrome на телефоне <b>${APP_URL.replace('https://','')}</b> и нажми «Установить приложение». Прогресс там будет свой.</div>`;
  const online=navigator.onLine;
  let how;
  if(STANDALONE)how=`<div class="info"><b>Приложение установлено.</b> Работает без интернета. Микрофон распознаёт речь только при подключении к сети — без сети отвечай вслух и открывай ответ.</div>`;

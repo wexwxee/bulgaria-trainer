@@ -1,5 +1,5 @@
 // Офлайн-кэш: при первом открытии сохраняем всё приложение, дальше работаем без сети.
-const CACHE='bg-trainer-4fd6a3e192';
+const CACHE='bg-trainer-90c81f27ad';
 const FILES=['./','index.html','manifest.webmanifest','icons/icon-192.png','icons/icon-512.png','icons/icon-maskable-512.png','icons/apple-touch-icon.png','fonts/pt-serif-700-cyrillic.woff2','fonts/pt-serif-700-latin.woff2'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
